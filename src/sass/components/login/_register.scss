@@ -1,0 +1,134 @@
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  &__container {
+    padding: 100px 0px;
+    width: 90%;
+    max-width: 480px;
+
+    @media (min-width: 768px) {
+      max-width: 768px;
+    }
+  }
+
+  &__email-confirmation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  &__success-title {
+    text-align: center;
+  }
+
+  &__email-resend {
+    font-size: 2rem;
+    background-color: black;
+    color: white;
+    padding: 5px 25px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__form-wrapper {
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 50px;
+  }
+
+  &__title {
+    font-size: 3.4rem;
+
+    @media (min-width: 768px) {
+      font-size: 5rem;
+    }
+  }
+
+  &__label {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+
+  &__form-username,
+  &__form-email,
+  &__form-username,
+  &__form-password,
+  &__form-password-confirm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__input {
+    font-size: 2rem;
+    padding: 10px 20px;
+    width: 250px;
+
+    @media (min-width: 480px) {
+      width: 350px;
+    }
+
+    @media (min-width: 768px) {
+      width: 500px;
+    }
+  }
+
+  &__submit-button {
+    background-color: var(--third);
+    color: var(--white);
+    border: none;
+    padding: 5px 10px;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  &__error-message {
+    background-color: red;
+  }
+
+  &__valid {
+    display: block;
+    background-color: green;
+  }
+
+  &__invalid {
+    display: block;
+    background-color: red;
+  }
+
+  &__uidnote {
+    display: block;
+    font-size: 1.6rem;
+    background-color: orange;
+  }
+
+  &__pwdnote {
+    display: block;
+    font-size: 1.6rem;
+    background-color: orange;
+  }
+
+  &__confirmnote {
+    display: block;
+    font-size: 1.6rem;
+    background-color: red;
+  }
+}
+
+.not-visible {
+  display: none;
+}
+
+.hide {
+  display: none;
+}

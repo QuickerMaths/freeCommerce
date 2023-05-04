@@ -1,0 +1,40 @@
+.client-address-form {
+  margin-top: 20px;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+
+  &__user-info-title-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__user-info-title {
+    font-size: 3rem;
+  }
+
+  &__edit-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__edit-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  &__input {
+    padding: 5px 10px;
+    font-size: 2rem;
+  }
+}

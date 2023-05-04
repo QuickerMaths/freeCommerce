@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html::-webkit-scrollbar {
+  display: hidden;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+button {
+  font-family: "Bebas Neue", cursive;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Bebas Neue", cursive;
+}
+
+// font-family: "Bebas Neue", cursive;

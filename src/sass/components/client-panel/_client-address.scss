@@ -1,0 +1,23 @@
+.client-address {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+
+  &__value-container {
+    border-bottom: 1px solid black;
+  }
+
+  &__title {
+    font-size: 2rem;
+    text-decoration: underline;
+  }
+
+  &__value {
+    font-size: 1.6rem;
+
+    @media (min-width: 768px) {
+      font-size: 2.4rem;
+    }
+  }
+}

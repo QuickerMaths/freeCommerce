@@ -1,0 +1,117 @@
+.single-product {
+  display: inline-block;
+  position: relative;
+
+  &__new-collection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--third);
+    color: var(--white);
+    padding: 5px;
+    z-index: 2;
+    border-radius: 5px;
+    font-size: 0.8rem;
+
+    @media (min-width: 768px) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__quick-add-container {
+    position: relative;
+
+    &:hover .single-product__quick-add {
+      opacity: 1;
+    }
+  }
+
+  &__img {
+    width: 200px;
+    height: 250px;
+    border-radius: 5px;
+
+    @media (min-width: 768px) {
+      width: 200px;
+      height: 250px;
+    }
+
+    @media (min-width: 1200px) {
+      width: 300px;
+      height: 350px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px 20px 10px 20px;
+    max-width: 200px;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      padding: 30px 30px 10px 30px;
+    }
+
+    @media (min-width: 1200px) {
+      max-width: 300px;
+    }
+  }
+
+  &__name {
+    font-size: 1.6rem;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+    @media (min-width: 1200px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__price {
+    font-size: 2rem;
+  }
+
+  &__old-price {
+    color: rgb(120, 116, 116);
+    text-decoration: line-through;
+  }
+
+  &__quick-add {
+    text-align: center;
+    font-size: 1.4rem;
+  }
+
+  &__buttons-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  &__size-button {
+    cursor: pointer;
+    font-size: 2rem;
+    background-color: rgba(23, 23, 23, 0.5);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+    transition: background-color 0.2s ease-out;
+
+    &:hover {
+      background-color: black;
+    }
+  }
+}

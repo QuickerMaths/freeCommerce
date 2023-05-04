@@ -1,0 +1,46 @@
+.client-single-product {
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__img {
+    width: 100px;
+    height: 125px;
+    border-radius: 5px;
+
+    @media (min-width: 768px) {
+      width: 125px;
+      height: 150px;
+    }
+  }
+
+  &__title {
+    font-size: 1.8rem;
+
+    @media (min-width: 768px) {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  &__button {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 5px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}

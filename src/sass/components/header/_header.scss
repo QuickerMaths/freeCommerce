@@ -1,0 +1,145 @@
+.header {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 10;
+  backdrop-filter: blur(5px);
+
+  &__center-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 480px;
+    width: 90%;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      max-width: 768px;
+    }
+
+    @media (min-width: 1200px) {
+      max-width: 1500px;
+    }
+  }
+
+  &__logo-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__logo-name {
+    height: 15px;
+
+    @media (min-width: 768px) {
+      height: 25px;
+    }
+  }
+
+  &__ui {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__user-svg,
+  &__cart-svg {
+    color: var(--white);
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+  }
+
+  &__user-logged-in {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__user-welcome {
+    color: var(--white);
+    font-size: 1.6rem;
+  }
+
+  &__user-button {
+    background-color: transparent;
+    border: none;
+  }
+
+  &__cart-button {
+    background: none;
+    border: none;
+  }
+
+  &__user-svg {
+    border-radius: 50px;
+    border: #fff solid 2px;
+  }
+
+  &__cart {
+    position: relative;
+  }
+
+  &__hamburger-button {
+    background-color: transparent;
+    border: none;
+  }
+
+  &__hamburger-icon {
+    width: 25px;
+    height: 25px;
+    color: #fff;
+  }
+
+  &__item-counter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: var(--white);
+    color: var(--third);
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+}
+
+.navigation {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+
+  &__item {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: text-shadow, font-size, 0.3s ease-in-out;
+    font-family: "Bebas Neue", cursive;
+  }
+
+  &__item:hover {
+    text-shadow: 1px 1px #ff0000, 2px 2px #00ddff, 3px 3px #3cff00;
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    height: 80px;
+  }
+
+  .header__logo,
+  .header__logo-name {
+    height: 40px;
+  }
+}

@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Karla:wght@200;300;400;500;600;700;800&display=swap");
+
+/* Global */
+
+@import "./css/utils/vars.css";
+@import "./css/utils/global.css";
+
+/* Header */
+
+@import "./css/components/header/header.css";
+
+/* Home */
+
+@import "./css/components/home/header-home.css";
+@import "./css/components/home/header-new.css";
+@import "./css/components/shop/single-product.css";
+@import "./css/components/home/home-grid-layout.css";
+
+/* Shop */
+
+@import "./css/components/shop/shop-header.css";
+@import "./css/components/shop/shop-main.css";
+
+/* Shopping Cart */
+
+@import "./css/components/shopping-cart/shopping-cart.css";
+
+/* Product */
+
+@import "./css/components/product-detail.css";
+
+/* Countdown */
+
+@import "./css/components/countdown.css";
