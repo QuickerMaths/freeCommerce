@@ -39,13 +39,20 @@ const Header: React.FC<Props> = ({
               alt="logo"
               src={logo}
               className="header__logo"
-              style={{ height: "50px" }}
+              height={50}
+              width={50}
             />
-            <img
-              alt="logoName"
-              src={logoSlogan}
-              className="header__logo-name"
-            />
+            {matches ? (
+              <img
+                alt="logoName"
+                src={logoSlogan}
+                className="header__logo-name"
+                height={50}
+                width={300}
+              />
+            ) : (
+              ""
+            )}
           </div>
         </Link>
         {matches ? (
@@ -73,7 +80,10 @@ const Header: React.FC<Props> = ({
                 )}
 
                 <Link to="/panel">
-                  <button className="header__user-button">
+                  <button
+                    className="header__user-button"
+                    aria-label="user panel"
+                  >
                     <AiOutlineUser className="header__user-svg" />
                   </button>
                 </Link>
@@ -82,6 +92,7 @@ const Header: React.FC<Props> = ({
               <button
                 className="header__user-button"
                 onClick={() => setLoginOpen(true)}
+                aria-label="login"
               >
                 <AiOutlineUser className="header__user-svg" />
               </button>
@@ -91,6 +102,7 @@ const Header: React.FC<Props> = ({
             <button
               className="header__cart-button"
               onClick={() => setOpen(true)}
+              aria-label="shopping cart"
             >
               <BsCart2 className="header__cart-svg" />
             </button>
@@ -104,11 +116,12 @@ const Header: React.FC<Props> = ({
             ""
           ) : (
             <div className="header__hamburger-menu">
-              <button className="header__hamburger-button">
-                <RxHamburgerMenu
-                  className="header__hamburger-icon"
-                  onClick={() => setMobileMenuOpen(true)}
-                />
+              <button
+                className="header__hamburger-button"
+                onClick={() => setMobileMenuOpen(true)}
+                aria-label="hamburger menu"
+              >
+                <RxHamburgerMenu className="header__hamburger-icon" />
               </button>
             </div>
           )}

@@ -30,6 +30,7 @@ const HomeNew = () => {
             className="home-new__button"
             disabled={page === 1}
             onClick={() => setPage((prev) => prev - 1)}
+            aria-label="previous"
           >
             <SlArrowLeft className="home-new__arrow" />
           </button>
@@ -38,6 +39,7 @@ const HomeNew = () => {
             className="home-new__button"
             disabled={page === data?.meta?.pagination?.pageCount}
             onClick={() => setPage((prev) => prev + 1)}
+            aria-label="next"
           >
             <SlArrowRight className="home-new__arrow" />
           </button>

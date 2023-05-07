@@ -1,21 +1,29 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useCheckUserAuthQuery } from "./features/api/apiUploadSlice/athorizationApiSlice";
-import { lazy, useEffect } from "react";
+import { lazy, useEffect, useState } from "react";
 import { useAppDispatch } from "./hooks/reduxHooks";
 import { getAuth } from "./features/authSlice/authSlice";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import SharedLayout from "./components/sharder layout/SharedLayout";
 import Error from "./utilities/Error";
-import LoadingPage from "./pages/LoadingPage";
+import Home from "./pages/Home";
+import usePrerenderImg from "./hooks/usePrerenderImg";
 
 function App() {
+  const [prerender, setPrerender] = useState<boolean>(false);
+
+  useEffect(() => {
+    setPrerender(!prerender);
+  }, []);
+
+  usePrerenderImg(prerender);
+
   const RequireAuth = lazy(() => import("./components/RequireAuth"));
   const Shop = lazy(() => import("./pages/Shop"));
   const About = lazy(() => import("./pages/About"));
   const Cancel = lazy(() => import("./pages/Cancel"));
   const Success = lazy(() => import("./pages/Success"));
-  const Home = lazy(() => import("./pages/Home"));
   const DeliveryFAQ = lazy(() => import("./pages/DeliveryFAQ"));
   const ReturnsFAQ = lazy(() => import("./pages/ReturnsFAQ"));
   const SizeGuide = lazy(() => import("./pages/SizeGuide"));
@@ -35,7 +43,7 @@ function App() {
 
   //Auth check
 
-  const { data, isSuccess, isLoading } = useCheckUserAuthQuery("");
+  const { data, isSuccess } = useCheckUserAuthQuery("");
 
   const dispatch = useAppDispatch();
 
@@ -44,10 +52,6 @@ function App() {
       dispatch(getAuth(data));
     }
   }, [data]);
-
-  if (isLoading) {
-    return <LoadingPage />;
-  }
 
   return (
     <>

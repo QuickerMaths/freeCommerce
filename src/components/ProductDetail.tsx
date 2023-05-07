@@ -13,7 +13,6 @@ import {
 } from "../features/api/apiUploadSlice/athorizationApiSlice";
 import SizeButton from "./SizeButton";
 import useToastCreator from "../hooks/useToastCreator";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ProductDetail = () => {
   const location = useLocation();
@@ -102,7 +101,7 @@ const ProductDetail = () => {
               media="(min-width: 600px)"
               className="product-detail__main-img"
             />
-            <LazyLoadImage
+            <img
               src={
                 import.meta.env.VITE_UPLOAD_URL +
                 item?.attributes?.images?.data[currentImg]?.attributes?.formats
@@ -110,20 +109,18 @@ const ProductDetail = () => {
               }
               className="product-detail__main-img"
               alt="product"
-              effect="blur"
             />
           </picture>
           <div className="product-detail__thumbnails">
             {item?.attributes?.images?.data.map((img: any, i: number) => {
               return (
-                <LazyLoadImage
+                <img
                   key={i}
                   src={
                     import.meta.env.VITE_UPLOAD_URL +
                     img?.attributes?.formats?.thumbnail?.url
                   }
                   alt="product thumbnail"
-                  effect="blur"
                   className="product-detail__thumbnail-img"
                   onClick={() => setCurrentImg(i)}
                 />

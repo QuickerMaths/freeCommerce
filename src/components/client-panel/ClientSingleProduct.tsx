@@ -1,6 +1,5 @@
 import React from "react";
 import { EntityId } from "@reduxjs/toolkit";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import { useGetItemsQuery } from "../../features/api/apiSlice/extenedApiSlice";
 import { useUpdateItemForUsersMutation } from "../../features/api/apiUploadSlice/athorizationApiSlice";
@@ -51,8 +50,7 @@ const ClientSingleProduct: React.FC<Props> = ({
           to={`products/:${item?.id}`}
           state={{ from: item, itemId: itemId }}
         >
-          <LazyLoadImage
-            effect="blur"
+          <img
             src={
               import.meta.env.VITE_UPLOAD_URL +
               item?.attributes?.previewImg?.data?.attributes?.url

@@ -1,8 +1,7 @@
 import React from "react";
-import heroImgDesktop from "../../assets/images/heroSection/heroImg-desktop.jpeg";
+import heroImgDesktop from "../../assets/images/heroSection/heroImg-desktop.webp";
 import heroImgTablet from "../../assets/images/heroSection/heroImg-tablet.webp";
 import heroImgMobile from "../../assets/images/heroSection/heroImg-mobile.webp";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const HomeHeader = () => {
   return (

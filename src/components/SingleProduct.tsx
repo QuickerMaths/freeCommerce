@@ -6,7 +6,6 @@ import { useGetFilterItemsQuery } from "../features/api/apiSlice/extenedApiSlice
 import { EntityId } from "@reduxjs/toolkit";
 import { ActiveFiltersType } from "../features/filterSlice/filterSlice";
 import { RootState } from "../redux/store";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import useMediaQuery from "../hooks/useMediaQuery";
 import SizeButtonQuickAdd from "./SizeButtonQuickAdd";
 
@@ -45,8 +44,7 @@ const SingleProduct: React.FC<Props> = ({ itemId, filterActive }) => {
         false
       )}
       <Link to={`:${item?.id}`} state={{ from: item, itemId: itemId }}>
-        <LazyLoadImage
-          effect="blur"
+        <img
           src={
             import.meta.env.VITE_UPLOAD_URL +
             item?.attributes?.previewImg?.data?.attributes?.url

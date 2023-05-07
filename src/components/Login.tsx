@@ -88,6 +88,7 @@ const Login: React.FC<Props> = ({ setLoginOpen, isLoginOpen }) => {
         <button
           className="login__close-button"
           onClick={() => setLoginOpen(false)}
+          aria-label="close button"
         >
           <TfiClose className="login__close-icon" />
         </button>
@@ -134,10 +135,15 @@ const Login: React.FC<Props> = ({ setLoginOpen, isLoginOpen }) => {
               />
             </div>
             <div className="login__form-ua">
-              <button type="submit" className="login__submit-button">
+              <button
+                type="submit"
+                className="login__submit-button"
+                aira-label="login button"
+              >
                 Zaloguj się
               </button>
               <button
+                aria-label="reset password button"
                 type="button"
                 className="login__reset-password-button"
                 onClick={() => {
@@ -149,6 +155,7 @@ const Login: React.FC<Props> = ({ setLoginOpen, isLoginOpen }) => {
               </button>
               <Link to="register">
                 <button
+                  aria-label="register button"
                   type="button"
                   className="login__register-button"
                   onClick={() => setLoginOpen(false)}

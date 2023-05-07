@@ -16,6 +16,7 @@ const MobileMenu: React.FC<Props> = ({
       className={`menu-mobile ${isMobileMenuOpen ? "menu-mobile-open" : ""}`}
     >
       <button
+        aria-label="close button"
         className="menu-mobile__close-button"
         onClick={() => setMobileMenuOpen(false)}
       >

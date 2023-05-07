@@ -14,7 +14,6 @@ import homeGrid4Mobile from "../../assets/images/homeGrid4/homeGrid4-mobile.webp
 import homeGrid6Desktop from "../../assets/images/homeGrid6/homeGrid6-desktop.webp";
 import homeGrid6Tablet from "../../assets/images/homeGrid6/homeGrid6-tablet.webp";
 import homeGrid6Mobile from "../../assets/images/homeGrid6/homeGrid6-mobile.webp";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../hooks/reduxHooks";
 import {
@@ -39,7 +38,7 @@ const HomeGrid = () => {
               return;
             }}
           >
-            <LazyLoadImage
+            <img
               src={homeGrid4Mobile}
               srcSet={`${homeGrid4Mobile} 300w, ${homeGrid4Tablet} 768w, ${homeGrid4Desktop} 1280w`}
               alt="img"
@@ -56,7 +55,7 @@ const HomeGrid = () => {
               return;
             }}
           >
-            <LazyLoadImage
+            <img
               src={homeGrid2Mobile}
               srcSet={`${homeGrid2Mobile} 300w, ${homeGrid2Tablet} 768w, ${homeGrid2Desktop} 1280w`}
               alt="img"
@@ -73,7 +72,7 @@ const HomeGrid = () => {
               return;
             }}
           >
-            <LazyLoadImage
+            <img
               src={homeGrid1Mobile}
               srcSet={`${homeGrid1Mobile} 300w, ${homeGrid1Tablet} 768w, ${homeGrid1Desktop} 1280w`}
               alt="img"
@@ -90,7 +89,7 @@ const HomeGrid = () => {
               return;
             }}
           >
-            <LazyLoadImage
+            <img
               src={homeGrid3Mobile}
               srcSet={`${homeGrid3Mobile} 300w, ${homeGrid3Tablet} 768w, ${homeGrid3Desktop} 1280w`}
               alt="img"
@@ -107,7 +106,7 @@ const HomeGrid = () => {
               return;
             }}
           >
-            <LazyLoadImage
+            <img
               src={homeGrid6Mobile}
               srcSet={`${homeGrid6Mobile} 300w, ${homeGrid6Tablet} 768w, ${homeGrid6Desktop} 1280w`}
               alt="img"

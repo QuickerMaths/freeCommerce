@@ -58,7 +58,11 @@ const ShoppingCart: React.FC<Props> = ({ setOpen, isOpen }) => {
   } else {
     content = (
       <>
-        <button className="cart__close-button" onClick={() => setOpen(false)}>
+        <button
+          className="cart__close-button"
+          onClick={() => setOpen(false)}
+          aria-label="close button"
+        >
           <GrClose className="cart__close-icon" />
         </button>
         <div className="cart__content">
