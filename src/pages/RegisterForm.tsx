@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 import { useRegisterNewUserMutation } from "../features/api/apiUploadSlice/athorizationApiSlice";
 import { getAuth } from "../features/authSlice/authSlice";
 import { useAppDispatch } from "../hooks/reduxHooks";
+import { BsFillCheckCircleFill } from "react-icons/bs";
+import { BsFillXCircleFill } from "react-icons/bs";
 
 export type UserProps = {
   username: string;
@@ -122,18 +124,18 @@ const RegisterForm = () => {
             <div className="register__form-username">
               <label htmlFor="username" className="register__label">
                 Nazwa uzytkownika
-                <span className={validName ? "register__valid" : "hide"}>
-                  Gites
-                </span>
-                <span
+                <BsFillCheckCircleFill
+                  style={{ color: "green" }}
+                  className={validName ? "register__valid" : "hide"}
+                />
+                <BsFillXCircleFill
+                  style={{ color: "red" }}
                   className={
                     validName || !userData.username
                       ? "hide"
                       : "register__invalid"
                   }
-                >
-                  nie gites
-                </span>
+                />
               </label>
               <input
                 name="username"
@@ -180,18 +182,18 @@ const RegisterForm = () => {
             <div className="register__form-password">
               <label htmlFor="password" className="register__label">
                 Hasło
-                <span className={validPwd ? "register__valid" : "hide"}>
-                  Gites
-                </span>
-                <span
+                <BsFillCheckCircleFill
+                  style={{ color: "green" }}
+                  className={validPwd ? "register__valid" : "hide"}
+                />
+                <BsFillXCircleFill
+                  style={{ color: "red" }}
                   className={
                     validPwd || !userData.password
                       ? "hide"
                       : "register__invalid"
                   }
-                >
-                  nie gites
-                </span>
+                />
               </label>
               <input
                 name="password"
@@ -226,20 +228,12 @@ const RegisterForm = () => {
             <div className="register__form-password-confirm">
               <label htmlFor="passwordConfirm" className="register__label">
                 Potwierdź hasło
-                <span
+                <BsFillCheckCircleFill
+                  style={{ color: "green" }}
                   className={
                     validMatch && matchPwd ? "register__valid" : "hide"
                   }
-                >
-                  Gites
-                </span>
-                <span
-                  className={
-                    validPwd || !matchPwd ? "hide" : "register__invalid"
-                  }
-                >
-                  nie gites
-                </span>
+                />
               </label>
               <input
                 id="passwordConfirm"
@@ -258,9 +252,7 @@ const RegisterForm = () => {
               <p
                 id="confirmnote"
                 className={
-                  matchFocus && !validMatch
-                    ? "register__confirmnote"
-                    : "not-visible"
+                  !validMatch ? "register__confirmnote" : "not-visible"
                 }
               >
                 Hasła się nie zgadzają

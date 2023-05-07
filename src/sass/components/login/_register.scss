@@ -57,6 +57,9 @@
   &__label {
     font-size: 2rem;
     margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
 
   &__form-username,
@@ -96,32 +99,26 @@
     background-color: red;
   }
 
+  &__invalid,
   &__valid {
     display: block;
-    background-color: green;
   }
 
-  &__invalid {
-    display: block;
-    background-color: red;
-  }
-
+  &__pwdnote,
   &__uidnote {
-    display: block;
-    font-size: 1.6rem;
-    background-color: orange;
-  }
-
-  &__pwdnote {
-    display: block;
-    font-size: 1.6rem;
-    background-color: orange;
+    font-size: 1.3rem;
+    background-color: rgb(255, 165, 0);
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    max-width: inherit;
   }
 
   &__confirmnote {
-    display: block;
     font-size: 1.6rem;
     background-color: red;
+    padding: 5px;
+    border-radius: 5px;
   }
 }
 

@@ -1557,6 +1557,9 @@ h3 {
 .register__label {
   font-size: 2rem;
   margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 .register__form-username, .register__form-email, .register__form-username, .register__form-password, .register__form-password-confirm {
   display: flex;
@@ -1589,28 +1592,22 @@ h3 {
 .register__error-message {
   background-color: red;
 }
-.register__valid {
+.register__invalid, .register__valid {
   display: block;
-  background-color: green;
 }
-.register__invalid {
-  display: block;
-  background-color: red;
-}
-.register__uidnote {
-  display: block;
-  font-size: 1.6rem;
-  background-color: orange;
-}
-.register__pwdnote {
-  display: block;
-  font-size: 1.6rem;
-  background-color: orange;
+.register__pwdnote, .register__uidnote {
+  font-size: 1.3rem;
+  background-color: rgb(255, 165, 0);
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  max-width: inherit;
 }
 .register__confirmnote {
-  display: block;
   font-size: 1.6rem;
   background-color: red;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .not-visible {
