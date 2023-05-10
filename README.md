@@ -44,7 +44,7 @@ Configure your app like this
 <img width="540" alt="Zrzut ekranu 2023-05-10 o 16 54 42" src="https://github.com/QuickerMaths/freeCommerce/assets/116837090/9b759432-5c31-429c-99ad-2d0bcab18212">
 
 You can also choose other database, but you have to install it first. Choosing SQLite is the easiest choice.
-After installation process is success replace all the files with those from previusly cloned repo and run
+After installation process is success replace all the files with those from previously cloned repo and run
 
 ```
 npm install
