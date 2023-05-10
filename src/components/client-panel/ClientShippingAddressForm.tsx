@@ -68,7 +68,7 @@ const ClientShippingAddressForm: React.FC<Props> = ({ setEdit, edit }) => {
       </p>
       <form onSubmit={handleSubmit} className="client-address-form__form">
         <label htmlFor="username" className="client-address-form-label">
-          Nazwa uzytkownika
+          Username
         </label>
         <input
           value={clientShippingAddress.username}
@@ -91,7 +91,7 @@ const ClientShippingAddressForm: React.FC<Props> = ({ setEdit, edit }) => {
           disabled
         />
         <label htmlFor="phoneNumber" className="client-address-form-label">
-          Numer Telefonu
+          Phone Number
         </label>
         <input
           value={clientShippingAddress.phoneNumber}

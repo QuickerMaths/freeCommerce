@@ -47,9 +47,8 @@ const HeaderShop = () => {
                 active === "damskie" ? "category-filter-active" : ""
               }`}
             >
-              Damska kolekcja
+              Womans collection
             </h2>
-            <p className="header-shop__under-title">Become Milf Mode</p>
           </button>
         </div>
       </div>
@@ -78,9 +77,8 @@ const HeaderShop = () => {
                 active === "meskie" ? "category-filter-active" : ""
               }`}
             >
-              Męska kolekcja
+              Mans collection
             </h2>
-            <p className="header-shop__under-title">Get Milf Mode</p>
           </button>
         </div>
       </div>
