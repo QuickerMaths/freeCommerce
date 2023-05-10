@@ -79,7 +79,7 @@ In your strapi app after creating your admin user:
 3. Generate your token and name it however you want
 4. Set token duration to unlimited 
 5. Set token type to custom and enable all Permissions
-6. Copy generated Api key and paste in as your VITE_API_TOKEN variable in your frontend app
+6. Copy generated Api key and paste in as your VITE_API_TOKEN variable for your frontend app
 
 ## How to start frontend App
 
