@@ -1,4 +1,4 @@
-# [FreeCommerce Website](https://freecommerce.com)
+# [FreeCommerce Website](https://freecommerce.shop)
 
 ## A fully functional ecommerce store written in React and TypeScript
 
