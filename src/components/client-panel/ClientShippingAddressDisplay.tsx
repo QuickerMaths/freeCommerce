@@ -10,7 +10,7 @@ const ClientShippingAddressDisplay = () => {
       <div className="client-address-form__container">
         <div className="client-address-form__wrapper">
           <div className="client-address-form__user-info-title-container">
-            <h3 className="client-address-form__user-info-title">Twoje Dane</h3>
+            <h3 className="client-address-form__user-info-title">About you</h3>
             <button
               className="client-address-form__edit-button"
               onClick={() => setEdit(!edit)}

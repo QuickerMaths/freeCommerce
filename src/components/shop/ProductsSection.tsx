@@ -9,9 +9,9 @@ import CollectionsFilters from "./CollectionsFilters";
 import SubCategoriesFilters from "./SubCategoriesFilters";
 import { RootState } from "../../redux/store";
 import { useAppSelector } from "../../hooks/reduxHooks";
-import CountDown from "../countdown/CountDown";
 import FiltersMobile from "./FiltersMobile";
 import useMediaQuery from "../../hooks/useMediaQuery";
+import LoadingPage from "../../pages/LoadingPage";
 
 const ProductsSection = () => {
   const matches = useMediaQuery("(min-width: 768px)");
@@ -32,13 +32,9 @@ const ProductsSection = () => {
   const { data: subCategoriesData } =
     useGetSubCategoriesQuery("getSubCategories");
 
-  const womanCollection = useAppSelector(
-    (state: RootState) => state.filterSlice.category
-  );
-
   let content;
   if (isLoading) {
-    <p>Loading...</p>;
+    return <h1 className="loading-products">Loading ...</h1>;
   } else if (isSuccess) {
     content = filterData.ids.map((itemId) => (
       <SingleProduct
@@ -50,18 +46,13 @@ const ProductsSection = () => {
   } else if (isError) {
     content = <p>error</p>;
   }
-
-  if (womanCollection === "damskie") {
-    return <CountDown />;
-  }
-
   return (
     <section className="shop">
       <div className="shop__container">
         {matches ? (
           <div className="shop__filters-container">
             <div className="shop__collection-filters-container">
-              <h3 className="shop__collection-title">Kolekcje</h3>
+              <h3 className="shop__collection-title">Collections</h3>
               <div className="shop__collection-filters">
                 {collectionData?.data.map((collection) => (
                   <CollectionsFilters
@@ -98,7 +89,7 @@ const ProductsSection = () => {
           {filterData?.ids.length !== 0 ? (
             content
           ) : (
-            <h2>Nie znalezniono produktów</h2>
+            <h2 className="loading-products">Products not fount</h2>
           )}
         </ul>
       </div>

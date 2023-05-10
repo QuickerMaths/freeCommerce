@@ -52,7 +52,7 @@ const ClientSingleOrder: React.FC<Props> = ({ sessionId }) => {
           to={`orders/:${orderData?.id}`}
           state={{ lineItemsData: lineItemsData, orderData: orderData }}
         >
-          <button className="single-order__button">Szczegóły</button>
+          <button className="single-order__button">Details</button>
         </Link>
       </div>
     );

@@ -2,7 +2,11 @@ import heroImgDesktop from "../assets/images/heroSection/heroImg-desktop.webp";
 import heroImgTablet from "../assets/images/heroSection/heroImg-tablet.webp";
 import heroImgMobile from "../assets/images/heroSection/heroImg-mobile.webp";
 import headerShopManDesktop from "../assets/images/headerShopMan/headerShopMan-desktop.webp";
+import headerShopManMobile from "../../assets/images/headerShopMan/headerShopMan-mobile.webp";
+import headerShopManTablet from "../../assets/images/headerShopMan/headerShopMan-tablet.webp";
 import headerShopWomanDesktop from "../assets/images/headerShopWoman/headerShopWoman-desktop.webp";
+import headerShopWomanMobile from "../../assets/images/headerShopWoman/headerShopWoman-mobile.webp";
+import headerShopWomanTablet from "../../assets/images/headerShopWoman/headerShopWoman-tablet.webp";
 import homeGrid1Desktop from "../assets/images/homeGrid1/homeGrid1-desktop.webp";
 import homeGrid1Tablet from "../assets/images/homeGrid1/homeGrid1-tablet.webp";
 import homeGrid1Mobile from "../assets/images/homeGrid1/homeGrid1-mobile.webp";
@@ -92,7 +96,7 @@ const usePrerenderImg = (prerender: boolean) => {
                 ? "768px"
                 : deviceType === "tablet"
                 ? "1024px"
-                : "3000px"
+                : "5000px"
             })`
           ).matches
       );

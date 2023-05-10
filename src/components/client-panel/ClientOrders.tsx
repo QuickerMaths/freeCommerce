@@ -11,7 +11,7 @@ const ClientOrders = () => {
 
   return (
     <div className="client-orders">
-      <h2 className="client-orders__title">Twoje Zamówienia</h2>
+      <h2 className="client-orders__title">Your Orders</h2>
 
       <ul className="single-order">
         {data?.map((item) => (

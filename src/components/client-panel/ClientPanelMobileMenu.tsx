@@ -42,7 +42,7 @@ const ClientPanelMenuMobile: React.FC<Props> = ({
             setMenuOpen(false);
           }}
         >
-          Twoje Dane
+          About You
         </button>
       </li>
       <li className="client-panel__menu-item">
@@ -55,7 +55,7 @@ const ClientPanelMenuMobile: React.FC<Props> = ({
             setMenuOpen(false);
           }}
         >
-          Twoje zamówienia
+          Your Orders
         </button>
       </li>
       <li className="client-panel__menu-item">
@@ -68,7 +68,7 @@ const ClientPanelMenuMobile: React.FC<Props> = ({
             setMenuOpen(false);
           }}
         >
-          Zapisane Produkty
+          Saved Products
         </button>
       </li>
       <li className="client-panel__menu-item">
@@ -80,7 +80,7 @@ const ClientPanelMenuMobile: React.FC<Props> = ({
           }}
           className="client-panel__menu-button"
         >
-          Wyloguj
+          Logout
         </button>
       </li>
     </ul>

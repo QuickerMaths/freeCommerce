@@ -13,7 +13,7 @@ const HomeHeader = () => {
         alt="header"
       />
       <h1 className="home-header__title">
-        We Are <span className="home-header__span">Hats</span>
+        Freecommerce <span className="home-header__span">Brand</span>
       </h1>
     </section>
   );

@@ -12,26 +12,26 @@ const ClientOrderDetails = () => {
         <h1 className="order-details__title">Szczegóły zamówienia</h1>
         <div className="order-details__content">
           <h2 className="order-details__info-id">
-            Numer zamówienia:
+            Order ID:
             <span className="order-details__span-id">
               {orderData?.id.slice(8)}
             </span>
           </h2>
           <h2 className="order-details__info">
-            Data złozenia zamówienia:
+            Date:
             <span className="order-details__span">
               {orderData?.metadata?.orderDate}
             </span>
           </h2>
           <div className="order-details__order-status-wrapper">
             <h2 className="order-details__info">
-              Cena całkowita:
+              Total price:
               <span className="order-details__span">
                 {orderData?.amount_total / 100} zł
               </span>
             </h2>
             <h2 className="order-details__info-order-status">
-              Status zamówienia:
+              Order status:
               <span
                 className="order-details__span"
                 style={{
@@ -41,23 +41,21 @@ const ClientOrderDetails = () => {
                 }}
               >
                 {orderData?.payment_status === "paid" ? (
-                  <p>Opłacono</p>
+                  <p>Paid</p>
                 ) : orderData.status === "open" ? (
                   <div className="order-details__unpaid-order-wrapper">
-                    <p className="order-details__unpaid-order-text">
-                      Nie opłacono
-                    </p>
+                    <p className="order-details__unpaid-order-text">Unpaid</p>
                     <button className="order-details__unpaid-order-button">
                       <a
                         className="order-details__unpaid-order-link"
                         href={orderData.url}
                       >
-                        Opłać zamówienie
+                        Pay now
                       </a>
                     </button>
                   </div>
                 ) : (
-                  <p>Zamówienie wygasło</p>
+                  <p>Order expired</p>
                 )}
               </span>
             </h2>
@@ -75,41 +73,41 @@ const ClientOrderDetails = () => {
               <p className="order-details__address-content">
                 {orderData?.customer_details
                   ? orderData?.customer_details?.email
-                  : "Nie podano"}
+                  : "------"}
               </p>
             </div>
             <div className="order-details__shipping-address-info">
-              <h2 className="order-details__address-title">Imię i nazwisko</h2>
+              <h2 className="order-details__address-title">Name</h2>
               <p className="order-details__address-content">
                 {orderData?.customer_details
                   ? orderData?.customer_details?.name
-                  : "Nie podano"}
+                  : "------"}
               </p>
             </div>
             <div className="order-details__shipping-address-info">
-              <h2 className="order-details__address-title">Miasto</h2>
+              <h2 className="order-details__address-title">City</h2>
               <p className="order-details__address-content">
                 {orderData?.customer_details
                   ? orderData?.customer_details?.address?.city
-                  : "Nie podano"}
+                  : "------"}
               </p>
             </div>
             <div className="order-details__shipping-address-info">
-              <h2 className="order-details__address-title">Ulica</h2>
+              <h2 className="order-details__address-title">Street</h2>
               <p className="order-details__address-content">
                 {orderData?.customer_details
                   ? orderData?.customer_details?.address?.line1 +
                     " " +
                     orderData?.customer_details?.address?.line2
-                  : "Nie podano"}
+                  : "------"}
               </p>
             </div>
             <div className="order-details__shipping-address-info">
-              <h2 className="order-details__address-title">Kod pocztowy</h2>
+              <h2 className="order-details__address-title">Postal code</h2>
               <p className="order-details__address-content">
                 {orderData?.customer_details
                   ? orderData?.customer_details?.address?.postal_code
-                  : "Nie podano"}
+                  : "------"}
               </p>
             </div>
           </div>

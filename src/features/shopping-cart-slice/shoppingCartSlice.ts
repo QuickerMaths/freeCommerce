@@ -65,9 +65,9 @@ export const shoppingCartSlice = createSlice({
           itemPrice,
         });
         state.itemsInCart = state.itemsArray.length;
-        useToastCreator("Przedmiot został dodany do koszyka", "success");
+        useToastCreator("Product added to cart", "success");
       } else {
-        useToastCreator("Przedmiot jest juz w koszyku", "error");
+        useToastCreator("Product already in cart", "error");
       }
       state.itemQuantity = 1;
     },

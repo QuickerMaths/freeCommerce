@@ -24,18 +24,12 @@
     }
   }
 
-  &__logo-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  &__logo-name {
-    height: 15px;
-
-    @media (min-width: 768px) {
-      height: 25px;
-    }
+  &__logo-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
   }
 
   &__ui {

@@ -5,6 +5,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+import { BsFillCheckCircleFill, BsFillXCircleFill } from "react-icons/bs";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useChangeUserPasswordMutation } from "../features/api/apiUploadSlice/athorizationApiSlice";
 import useToastCreator from "../hooks/useToastCreator";
@@ -32,7 +33,7 @@ const ResetPassword = () => {
       await changeUserPassword(resetData);
 
       useToastCreator(
-        "Zmiana hasła przebiegła pomyślnie, mozesz się zalowogac",
+        "Password changed successfully, you can login",
         "success"
       );
       navigate("../", { replace: true });
@@ -71,27 +72,25 @@ const ResetPassword = () => {
   if (isError) {
     content = (
       <p className="reset__error">
-        Coś poszło nie tak, spróbuj ponownie później
+        Something went wrong, please try again later.
       </p>
     );
   } else {
     content = (
       <div className="reset__form-wrapper">
-        <h2 className="reset__title">Ustaw nowe hasło</h2>
+        <h2 className="reset__title">Set new password</h2>
         <form onSubmit={handleResetPasswordSubmit} className="reset__form">
           <div className="reset__form-email">
             <label htmlFor="password" className="register__label">
-              Hasło
-              <span className={validPwd ? "register__valid" : "hide"}>
-                Gites
-              </span>
-              <span
-                className={
-                  validPwd || !resetData.password ? "hide" : "register__invalid"
-                }
-              >
-                nie gites
-              </span>
+              Password
+              <BsFillCheckCircleFill
+                style={{ color: "green" }}
+                className={validPwd ? "register__valid" : "hide"}
+              />
+              <BsFillXCircleFill
+                style={{ color: "red" }}
+                className={validPwd ? "hide" : "register__invalid"}
+              />
             </label>
             <input
               name="password"
@@ -111,10 +110,9 @@ const ResetPassword = () => {
                 pwdFocus && !validPwd ? "register__pwdnote" : "not-visible"
               }
             >
-              4 do 24 znaków. <br />
-              Musi zawierać wielkie i małe litery oraz conajmniej jeden znak
-              specjalny. <br />
-              Dozwolone znaki specialne:{" "}
+              4 do 24 signs. <br />
+              Has to contain capital letter and at least one special sign <br />
+              Allowed special signs:{" "}
               <span aria-label="exclamation mark">!</span>
               <span aria-label="at symbol">@</span>{" "}
               <span aria-label="hashtag">#</span>
@@ -123,26 +121,12 @@ const ResetPassword = () => {
             </p>
           </div>
           <div className="reset__form-email">
-            <label htmlFor="passwordConfirmation" className="register__label">
-              Potwierdź hasło
-              <span
-                className={
-                  validMatch && resetData.passwordConfirmation
-                    ? "register__valid"
-                    : "hide"
-                }
-              >
-                Gites
-              </span>
-              <span
-                className={
-                  validPwd || !resetData.passwordConfirmation
-                    ? "hide"
-                    : "register__invalid"
-                }
-              >
-                nie gites
-              </span>
+            <label htmlFor="passwordConfirm" className="register__label">
+              Confirm password
+              <BsFillCheckCircleFill
+                style={{ color: "green" }}
+                className={validMatch ? "register__valid" : "hide"}
+              />
             </label>
             <input
               name="passwordConfirmation"
@@ -160,20 +144,16 @@ const ResetPassword = () => {
           </div>
           <p
             id="confirmnote"
-            className={
-              matchFocus && !validMatch
-                ? "register__confirmnote"
-                : "not-visible"
-            }
+            className={!validMatch ? "register__confirmnote" : "not-visible"}
           >
-            Hasła się nie zgadzają
+            Passwords must match.
           </p>
           <button
             type="submit"
             className="reset__submit-button"
             disabled={!validPwd || !validMatch ? true : false}
           >
-            {isLoading ? "Ładowanie" : "Ustaw nowe hasło"}
+            {isLoading ? "Loading" : "Set new password"}
           </button>
         </form>
       </div>

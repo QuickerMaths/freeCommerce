@@ -49,16 +49,16 @@ const Login: React.FC<Props> = ({ setLoginOpen, isLoginOpen }) => {
       setPwd("");
       navigate("/panel");
       setLoginOpen(false);
-      useToastCreator("Logowanie powiodło się", "success");
+      useToastCreator("Logged in", "success");
     } catch (error: any) {
       if (error.status === 400) {
-        setErrMsg("Brakuje hasła lub nazwy uzytkownika");
+        setErrMsg("Password or username Missing");
       } else if (error.status === 401) {
-        setErrMsg("Hasło lub nazwa uzywtkownika nieprawidłowe");
+        setErrMsg("Password or username Incorrect");
       } else if (!error) {
-        setErrMsg("Serwer nie odpowiada");
+        setErrMsg("No server response");
       } else {
-        setErrMsg("Hasło lub nazwa uzywtkownika nieprawidłowe");
+        setErrMsg("Password or username Incorrect");
       }
 
       errRef.current.focus();
@@ -93,7 +93,7 @@ const Login: React.FC<Props> = ({ setLoginOpen, isLoginOpen }) => {
           <TfiClose className="login__close-icon" />
         </button>
         <div className="login__form-wrapper">
-          <h2 className="login__title">Logowanie</h2>
+          <h2 className="login__title">Login</h2>
           <p
             className={errMsg ? "login__error-message" : "not-visible"}
             aria-live="assertive"
@@ -104,7 +104,7 @@ const Login: React.FC<Props> = ({ setLoginOpen, isLoginOpen }) => {
           <form onSubmit={handleSubmit} className="login__form">
             <div className="login__form-username">
               <label htmlFor="username" className="login__label">
-                Nazwa uzytkownika
+                Username
               </label>
               <input
                 ref={userRef}
@@ -121,7 +121,7 @@ const Login: React.FC<Props> = ({ setLoginOpen, isLoginOpen }) => {
             </div>
             <div className="login__form-password">
               <label htmlFor="password" className="login__label">
-                Hasło
+                Password
               </label>
               <input
                 id="password"
@@ -140,7 +140,7 @@ const Login: React.FC<Props> = ({ setLoginOpen, isLoginOpen }) => {
                 className="login__submit-button"
                 aira-label="login button"
               >
-                Zaloguj się
+                Login
               </button>
               <button
                 aria-label="reset password button"
@@ -151,7 +151,7 @@ const Login: React.FC<Props> = ({ setLoginOpen, isLoginOpen }) => {
                   setLoginOpen(false);
                 }}
               >
-                Zapomniałeś hasła?
+                Forgot your password?
               </button>
               <Link to="register">
                 <button
@@ -160,7 +160,7 @@ const Login: React.FC<Props> = ({ setLoginOpen, isLoginOpen }) => {
                   className="login__register-button"
                   onClick={() => setLoginOpen(false)}
                 >
-                  Zarejestruj się
+                  Register
                 </button>
               </Link>
             </div>

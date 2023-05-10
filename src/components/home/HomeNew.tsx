@@ -23,7 +23,7 @@ const HomeNew = () => {
   return (
     <section className="home-new">
       <div className="home-new__container">
-        <h2 className="home-new__title">Nowości</h2>
+        <h2 className="home-new__title">Whats new?</h2>
         <ul className="home-new__content">{content}</ul>
         <div className="home-new__pagination-container">
           <button

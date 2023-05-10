@@ -36,24 +36,24 @@ const Success = () => {
       <section className="order-details">
         <div className="order-details__container">
           <h1 className="order-details__title">
-            Twoje zamówienie przebiegło pomyślnie
+            Your order has been placed successfully!
           </h1>
           <div className="order-details__content">
             <h2 className="order-details__info-id">
-              Numer zamówienia:
+              Order ID:
               <span className="order-details__span-id">
                 {orderData?.id.slice(8)}
               </span>
             </h2>
             <h2 className="order-details__info">
-              Data złozenia zamówienia:
+              Date:
               <span className="order-details__span">
                 {orderData?.metadata?.orderDate}
               </span>
             </h2>
             <div className="order-details__order-status-wrapper">
               <h2 className="order-details__info">
-                Cena całkowita:
+                Total price:
                 <span className="order-details__span">
                   {orderData?.amount_total / 100} zł
                 </span>
@@ -74,28 +74,26 @@ const Success = () => {
                 </p>
               </div>
               <div className="order-details__shipping-address-info">
-                <h2 className="order-details__address-title">
-                  Imię i nazwisko
-                </h2>
+                <h2 className="order-details__address-title">Name</h2>
                 <p className="order-details__address-content">
                   {orderData?.customer_details?.name}
                 </p>
               </div>
               <div className="order-details__shipping-address-info">
-                <h2 className="order-details__address-title">Miasto</h2>
+                <h2 className="order-details__address-title">City</h2>
                 <p className="order-details__address-content">
                   {orderData?.customer_details?.address?.city}
                 </p>
               </div>
               <div className="order-details__shipping-address-info">
-                <h2 className="order-details__address-title">Ulica</h2>
+                <h2 className="order-details__address-title">Street</h2>
                 <p className="order-details__address-content">
                   {orderData?.customer_details?.address?.line1 +
                     orderData?.customer_details?.address?.line2}
                 </p>
               </div>
               <div className="order-details__shipping-address-info">
-                <h2 className="order-details__address-title">Kod pocztowy</h2>
+                <h2 className="order-details__address-title">Postal code</h2>
                 <p className="order-details__address-content">
                   {orderData?.customer_details?.address?.postal_code}
                 </p>

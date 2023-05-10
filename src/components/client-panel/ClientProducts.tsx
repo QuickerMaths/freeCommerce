@@ -10,7 +10,7 @@ const ClientProducts = () => {
   return (
     <section className="client-products">
       <div className="client-products__container">
-        <h2 className="client-products__title">Zapisane produkty</h2>
+        <h2 className="client-products__title">Saved Products</h2>
         <ul className="client-products__list">
           {wishlist?.map((itemId) => (
             <ClientSingleProduct

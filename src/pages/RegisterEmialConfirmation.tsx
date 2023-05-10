@@ -13,7 +13,7 @@ const RegisterEmialConfirmation = () => {
   const handleConfirmation = async (email: string) => {
     try {
       await sendEmailConfirmation(email);
-      useToastCreator("success", "Wysłano wiadomość");
+      useToastCreator("success", "Message sent successfully");
       setResend(true);
       setTimeout(() => {
         setResend(false);
@@ -28,18 +28,15 @@ const RegisterEmialConfirmation = () => {
       <div className="register__container">
         <div className="register__email-confirmation">
           <p className="register__success-title">
-            Zarejestrowano pomyślnie, aby móc korzystac ze swojego konta,
-            przejdź na podanego miala i potwierdź go w wiadomości którą do
-            Ciebie wysłaliśmy
+            Registration process completed successfully! Please check your email
+            for confirmation.
           </p>
           <button
             disabled={resend}
             className="register__email-resend"
             onClick={() => handleConfirmation(email as string)}
           >
-            {resend
-              ? "Wysłano, poczekaj 30 sekund zanim wyślesz ponownie"
-              : "Wyślij ponownie"}
+            {resend ? "Wait 30 secons to send again" : "Send again"}
           </button>
         </div>
       </div>

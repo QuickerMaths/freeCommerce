@@ -8,7 +8,6 @@ const LoadingPage = () => {
         <div className="spinner-icon"></div>
       </div>
       <div className="spinner-icon-static"></div>
-      <img src={logo} alt="logo" className="loading__logo" />
     </section>
   );
 };

@@ -57,12 +57,12 @@ const ProductDetail = () => {
       if (updatedUserWishList === null) {
         updatedUserWishList = [];
         updatedUserWishList.push(itemId);
-        useToastCreator("Zapisano przedmiot", "success");
+        useToastCreator("Product saved", "success");
       } else if (!updatedUserWishList.find((id) => id === itemId)) {
         updatedUserWishList = [...updatedUserWishList, itemId];
-        useToastCreator("Zapisano przedmiot", "success");
+        useToastCreator("Products saved", "success");
       } else {
-        useToastCreator("Przedmiot został juz zapisany", "error");
+        useToastCreator("Products already added", "error");
       }
 
       try {
@@ -140,7 +140,7 @@ const ProductDetail = () => {
           </div>
           <div className="product-detail__size-wrapper">
             <div className="product-detail__size-container">
-              <p className="product-detail__size-title">Wybierz rozmiar</p>
+              <p className="product-detail__size-title">Choose size</p>
               <div className="single-product__buttons-container">
                 {item?.attributes.sizes.split(",").map((size, i) => (
                   <SizeButton
@@ -152,12 +152,6 @@ const ProductDetail = () => {
                 ))}
               </div>
             </div>
-            <p
-              onClick={() => navigate("/faq/size-guide", { replace: true })}
-              className="product-detail__size-table"
-            >
-              Tabela rozmiarów
-            </p>
           </div>
           <div className="product-detail__button-wrapper">
             <button
@@ -168,7 +162,7 @@ const ProductDetail = () => {
                   : dispatch(addToCart(itemData))
               }
             >
-              Dodaj do koszyka
+              Add to cart
             </button>
 
             <button
@@ -182,7 +176,7 @@ const ProductDetail = () => {
                   : handleItemSave(itemId)
               }
             >
-              Dodaj do ulubionych
+              Add to wishlist
             </button>
           </div>
           <p className="product-detail__desc">

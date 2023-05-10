@@ -36,7 +36,7 @@ const SendResetPassword = () => {
     content = (
       <>
         <p className="reset__success">
-          Link do resetowania hasła został wysłany na podany adres email
+          Link to reset your password was sent to your email
         </p>
         <button
           disabled={resend}
@@ -44,19 +44,19 @@ const SendResetPassword = () => {
           className="reset__submit-button"
         >
           {resend
-            ? "Wysłano, poczekaj 30 sekund zanim wyślesz link ponownie"
-            : "Wyślij ponownie"}
+            ? "Waint 30 second before you resend your link again"
+            : "Send again"}
         </button>
       </>
     );
   } else if (isError) {
     <p className="reset__error">
-      Coś poszło nie tak, spróbuj ponownie później
+      Something went wrong, please try again later
     </p>;
   } else {
     content = (
       <div className="reset__form-wrapper">
-        <h2 className="reset__title">Zresetuj hasło</h2>
+        <h2 className="reset__title">Reset password</h2>
         <form onSubmit={handleResetPasswordSubmit} className="reset__form">
           <div className="reset__form-email">
             <label htmlFor="email" className="reset__label">
@@ -76,7 +76,7 @@ const SendResetPassword = () => {
             className="reset__submit-button"
             disabled={emailPwdReset === "" ? true : false}
           >
-            {isLoading ? "Wysyłanie" : "Wyślij link"}
+            {isLoading ? "Sending" : "Send link"}
           </button>
         </form>
       </div>

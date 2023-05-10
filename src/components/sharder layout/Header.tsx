@@ -1,9 +1,7 @@
 import React from "react";
 import { AiOutlineUser } from "react-icons/ai";
 import { BsCart2 } from "react-icons/bs";
-import logo from "../../assets/images/logo/logo.webp";
-import logoSlogan from "../../assets/images/logoSlogan/logoSlogan.webp";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../hooks/reduxHooks";
 import { RootState } from "../../redux/store";
 import useMediaQuery from "../../hooks/useMediaQuery";
@@ -20,6 +18,7 @@ const Header: React.FC<Props> = ({
   setLoginOpen,
   setMobileMenuOpen,
 }) => {
+  const navigate = useNavigate();
   const matches = useMediaQuery("(min-width: 768px)");
 
   const itemsInCart = useAppSelector(
@@ -33,36 +32,29 @@ const Header: React.FC<Props> = ({
   return (
     <header className="header">
       <div className="header__center-container">
-        <Link to={"/"}>
-          <div className="header__logo-container">
-            <img
-              alt="logo"
-              src={logo}
-              className="header__logo"
-              height={50}
-              width={50}
-            />
-            {matches ? (
-              <img
-                alt="logoName"
-                src={logoSlogan}
-                className="header__logo-name"
-                height={50}
-                width={300}
-              />
-            ) : (
-              ""
-            )}
-          </div>
-        </Link>
+        <button
+          className="header__logo-button"
+          aria-label="logo"
+          onClick={() => {
+            navigate("/");
+            scrollTo({
+              top: 0,
+              left: 0,
+              behavior: "smooth",
+            });
+          }}
+        >
+          <h2 className="header__logo">FreeCommerce</h2>
+        </button>
+
         {matches ? (
           <nav className="navigation">
             <ul className="navigation__list">
               <li className="navigation__item">
-                <Link to="/">Strona Główna</Link>
+                <Link to="/">Home</Link>
               </li>
               <li className="navigation__item">
-                <Link to="/shop">Sklep</Link>
+                <Link to="/shop">Shop</Link>
               </li>
             </ul>
           </nav>
@@ -74,7 +66,7 @@ const Header: React.FC<Props> = ({
             {username ? (
               <div className="header__user-logged-in">
                 {matches ? (
-                  <h2 className="header__user-welcome">Witaj {username}</h2>
+                  <h2 className="header__user-welcome">Hi, {username}</h2>
                 ) : (
                   ""
                 )}

@@ -43,6 +43,8 @@ const HomeGrid = () => {
               srcSet={`${homeGrid4Mobile} 300w, ${homeGrid4Tablet} 768w, ${homeGrid4Desktop} 1280w`}
               alt="img"
               className="home-grid__img--one"
+              width={350}
+              height={256}
             />
             <p className="home-grid__title--one">Tank Topy</p>
           </div>
@@ -60,6 +62,8 @@ const HomeGrid = () => {
               srcSet={`${homeGrid2Mobile} 300w, ${homeGrid2Tablet} 768w, ${homeGrid2Desktop} 1280w`}
               alt="img"
               className="home-grid__img--two"
+              width={157}
+              height={288}
             />
             <p className="home-grid__title--two">Topy</p>
           </div>
@@ -77,6 +81,8 @@ const HomeGrid = () => {
               srcSet={`${homeGrid1Mobile} 300w, ${homeGrid1Tablet} 768w, ${homeGrid1Desktop} 1280w`}
               alt="img"
               className="home-grid__img--three"
+              width={157}
+              height={288}
             />
             <p className="home-grid__title--three">Koszulki</p>
           </div>
@@ -94,6 +100,8 @@ const HomeGrid = () => {
               srcSet={`${homeGrid3Mobile} 300w, ${homeGrid3Tablet} 768w, ${homeGrid3Desktop} 1280w`}
               alt="img"
               className="home-grid__img--four"
+              height={171}
+              width={157}
             />
             <p className="home-grid__title--four">Kolekcja Damska</p>
           </div>
@@ -111,6 +119,8 @@ const HomeGrid = () => {
               srcSet={`${homeGrid6Mobile} 300w, ${homeGrid6Tablet} 768w, ${homeGrid6Desktop} 1280w`}
               alt="img"
               className="home-grid__img--five"
+              height={171}
+              width={157}
             />
             <p className="home-grid__title--five">Kolekcja Męska</p>
           </div>

@@ -8,8 +8,12 @@ import headerShopWomanDesktop from "../../assets/images/headerShopWoman/headerSh
 import headerShopManMobile from "../../assets/images/headerShopMan/headerShopMan-mobile.webp";
 import headerShopManTablet from "../../assets/images/headerShopMan/headerShopMan-tablet.webp";
 import headerShopManDesktop from "../../assets/images/headerShopMan/headerShopMan-desktop.webp";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const HeaderShop = () => {
+  const matchesTablet = useMediaQuery("max-width:1024px");
+  const matchesDesktop = useMediaQuery("max-width:5000px");
+
   const dispatch = useAppDispatch();
 
   const active = useAppSelector(
@@ -21,8 +25,15 @@ const HeaderShop = () => {
       <div
         className="header-shop__left-side-background"
         style={{
-          backgroundImage: `url('${headerShopWomanDesktop}')`,
+          backgroundImage: `url('${
+            matchesDesktop
+              ? headerShopWomanDesktop
+              : matchesTablet
+              ? headerShopWomanTablet
+              : headerShopWomanMobile
+          }')`,
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
       >
@@ -45,8 +56,15 @@ const HeaderShop = () => {
       <div
         className="header-shop__right-side-background"
         style={{
-          backgroundImage: `url('${headerShopManDesktop}')`,
+          backgroundImage: `url('${
+            matchesDesktop
+              ? headerShopManDesktop
+              : matchesTablet
+              ? headerShopManTablet
+              : headerShopManMobile
+          }')`,
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
       >

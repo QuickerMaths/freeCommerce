@@ -71,7 +71,7 @@ const ClientSingleProduct: React.FC<Props> = ({
           className="client-single-product__button"
           onClick={() => handleDelete()}
         >
-          Usuń
+          Delete
         </button>
       </div>
     </li>

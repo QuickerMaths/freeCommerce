@@ -26,7 +26,7 @@ const ClientPanelMenu: React.FC<Props> = ({
           }`}
           onClick={() => setActiveClient("address")}
         >
-          Twoje Dane
+          About you
         </button>
       </li>
       <li className="client-panel__menu-item">
@@ -36,7 +36,7 @@ const ClientPanelMenu: React.FC<Props> = ({
           }`}
           onClick={() => setActiveClient("orders")}
         >
-          Twoje zamówienia
+          Your orders
         </button>
       </li>
       <li className="client-panel__menu-item">
@@ -46,7 +46,7 @@ const ClientPanelMenu: React.FC<Props> = ({
           }`}
           onClick={() => setActiveClient("products")}
         >
-          Zapisane Produkty
+          Saved products
         </button>
       </li>
       <li className="client-panel__menu-item">
@@ -58,7 +58,7 @@ const ClientPanelMenu: React.FC<Props> = ({
           }}
           className="client-panel__menu-button"
         >
-          Wyloguj
+          Logout
         </button>
       </li>
     </ul>

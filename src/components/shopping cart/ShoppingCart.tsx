@@ -23,7 +23,7 @@ const ShoppingCart: React.FC<Props> = ({ setOpen, isOpen }) => {
     useStripePaymentMutation();
 
   const stripePromise = loadStripe(
-    "pk_live_51MlhSDIXFmUq08Lye33tdmA4GyaqJcQDOpW1zC6gxjmCiAELVLNG0QoexK6X0Tqcn9AmsUxTUStn07LQtiNSeO8U000tzaQz3g"
+    "pk_test_51N5ZgrCngNzB7I6mYJGsMlWvjLWPGnFPUQxJQUVipfcTroeOGsgnTprbjOsVo0yd0oo00U0rlOaNN22AMtKXJn2600aHDs85FD"
   );
 
   const handlePayment = async () => {
@@ -34,6 +34,8 @@ const ShoppingCart: React.FC<Props> = ({ setOpen, isOpen }) => {
         userId: userId,
         products: itemsArray,
       });
+
+      console.log(res);
 
       await stripe?.redirectToCheckout({
         sessionId: res.data.stripeSession.id,
@@ -48,12 +50,12 @@ const ShoppingCart: React.FC<Props> = ({ setOpen, isOpen }) => {
   if (isLoading || isSuccess) {
     content = (
       <p className="cart__loading-message">
-        Zaraz zostaniesz przeniesiony na strone płatności...
+        Your are being redirected to payment page...
       </p>
     );
   } else if (isError) {
     <p className="cart__loading-message">
-      Coś poszło nie tak spróbuj ponownie później
+      Something went wrong, please try again later.
     </p>;
   } else {
     content = (
@@ -68,7 +70,7 @@ const ShoppingCart: React.FC<Props> = ({ setOpen, isOpen }) => {
         <div className="cart__content">
           {itemsArray.length !== 0 ? (
             <div className="cart__full-cart">
-              <h2 className="cart__full-cart-title">Koszyk:</h2>
+              <h2 className="cart__full-cart-title">Cart:</h2>
               <div className="cart__full-cart-content">
                 <ul className="cart__full-cart-item-list">
                   {itemsArray.map((item) => (
@@ -76,7 +78,7 @@ const ShoppingCart: React.FC<Props> = ({ setOpen, isOpen }) => {
                   ))}
                 </ul>
                 <p className="cart__full-cart-total-price">
-                  Koszt: {totalPrice.reduce((a, b) => a + b, 0)} zł
+                  Total price: {totalPrice.reduce((a, b) => a + b, 0)} zł
                 </p>
                 <div className="cart__full-cart-buttons-container">
                   <Link to="/shop">
@@ -84,29 +86,27 @@ const ShoppingCart: React.FC<Props> = ({ setOpen, isOpen }) => {
                       className="cart__full-cart-button"
                       onClick={() => setOpen(false)}
                     >
-                      Kontynuj zakupy
+                      Continue shopping
                     </button>
                   </Link>
                   <button
                     className="cart__full-cart-button"
                     onClick={() => handlePayment()}
                   >
-                    Przejdź do płatności
+                    Go to payment
                   </button>
                 </div>
               </div>
             </div>
           ) : (
             <div className="cart__empty-cart-container">
-              <h2 className="cart__empty-cart-message">
-                Twój koszyk jest pusty
-              </h2>
+              <h2 className="cart__empty-cart-message">Your cart is empty!</h2>
               <Link to="/shop">
                 <button
                   className="cart__empty-cart-button"
                   onClick={() => setOpen(false)}
                 >
-                  Przejdź do sklepu
+                  Start shopping
                 </button>
               </Link>
             </div>

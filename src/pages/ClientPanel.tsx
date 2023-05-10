@@ -24,7 +24,7 @@ const ClientPanel = () => {
   return (
     <section className="client-panel">
       <div className="client-panel__container">
-        <h2 className="client-panel__title">Panel kilenta</h2>
+        <h2 className="client-panel__title">Client panel</h2>
         {matches ? (
           ""
         ) : (

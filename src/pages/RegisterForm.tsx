@@ -36,6 +36,35 @@ const RegisterForm = () => {
     password: "",
   });
 
+  const [validName, setaValidName] = useState<boolean>(false);
+  const [userFocus, setUserFocus] = useState<boolean>(false);
+
+  const [validPwd, setaValidPwd] = useState<boolean>(false);
+  const [pwdFocus, setPwdFocus] = useState<boolean>(false);
+
+  const [matchPwd, setMatchPwd] = useState<string>("");
+  const [validMatch, setaValidMatch] = useState<boolean>(false);
+  const [matchFocus, setMatchFocus] = useState<boolean>(false);
+
+  const [errMsg, setErrMsg] = useState<string>("");
+
+  useEffect(() => {
+    userRef.current.focus();
+  }, []);
+
+  useEffect(() => {
+    setaValidName(USER_REGEX.test(userData.username));
+  }, [userData.username]);
+
+  useEffect(() => {
+    setaValidPwd(PWD_REGEX.test(userData.password));
+    setaValidMatch(userData.password === matchPwd);
+  }, [userData.password, matchPwd]);
+
+  useEffect(() => {
+    setErrMsg("");
+  }, [userData.username, userData.password, matchPwd]);
+
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
@@ -76,13 +105,11 @@ const RegisterForm = () => {
       }
     }
   };
-
-
   return (
     <section className="register">
       <div className="register__container">
         <div className="register__form-wrapper">
-          <h2 className="register__title">Zarejestruj się</h2>
+          <h2 className="register__title">Register</h2>
 
           <p
             ref={errRef}
@@ -95,7 +122,7 @@ const RegisterForm = () => {
           <form onSubmit={handleSubmit} className="register__form">
             <div className="register__form-username">
               <label htmlFor="username" className="register__label">
-                Nazwa uzytkownika
+                User name
                 <BsFillCheckCircleFill
                   style={{ color: "green" }}
                   className={validName ? "register__valid" : "hide"}
@@ -132,9 +159,9 @@ const RegisterForm = () => {
                     : "not-visible"
                 }
               >
-                4 do 24 znaków. <br />
-                Musi zaczynać sie literą. <br />
-                Litery,liczby i znaki specjalne dozwolone.
+                4 do 24 signs. <br />
+                One capital letter. <br />
+                Letters, numbers and special signs allowed.
               </p>
             </div>
             <div className="register__form-email">
@@ -153,7 +180,7 @@ const RegisterForm = () => {
             </div>
             <div className="register__form-password">
               <label htmlFor="password" className="register__label">
-                Hasło
+                Password
                 <BsFillCheckCircleFill
                   style={{ color: "green" }}
                   className={validPwd ? "register__valid" : "hide"}
@@ -186,10 +213,10 @@ const RegisterForm = () => {
                   pwdFocus && !validPwd ? "register__pwdnote" : "not-visible"
                 }
               >
-                4 do 24 znaków. <br />
-                Musi zawierać wielkie i małe litery oraz conajmniej jeden znak
-                specjalny. <br />
-                Dozwolone znaki specialne:{" "}
+                4 do 24 signs. <br />
+                Has to contain capital letter and at least one special sign{" "}
+                <br />
+                Allowed special signs:{" "}
                 <span aria-label="exclamation mark">!</span>
                 <span aria-label="at symbol">@</span>{" "}
                 <span aria-label="hashtag">#</span>
@@ -199,7 +226,7 @@ const RegisterForm = () => {
             </div>
             <div className="register__form-password-confirm">
               <label htmlFor="passwordConfirm" className="register__label">
-                Potwierdź hasło
+                Confirm password
                 <BsFillCheckCircleFill
                   style={{ color: "green" }}
                   className={
@@ -227,7 +254,7 @@ const RegisterForm = () => {
                   !validMatch ? "register__confirmnote" : "not-visible"
                 }
               >
-                Hasła się nie zgadzają
+                Passwords must match.
               </p>
             </div>
             <button
@@ -235,7 +262,7 @@ const RegisterForm = () => {
               type="submit"
               className="login__submit-button"
             >
-              Załóz konto
+              Create an account
             </button>
           </form>
         </div>

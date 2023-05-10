@@ -41,7 +41,7 @@ const NewProduct: React.FC<Props> = ({ itemId, page }) => {
   return (
     <li className="single-product">
       {item?.attributes.isNew ? (
-        <p className="single-product__new-collection">Nowa Kolekcja</p>
+        <p className="single-product__new-collection">New Collection</p>
       ) : (
         false
       )}
@@ -68,7 +68,7 @@ const NewProduct: React.FC<Props> = ({ itemId, page }) => {
       </div>
       {matches && (
         <>
-          <p className="single-product__quick-add">Szybkie dodawanie</p>
+          <p className="single-product__quick-add">Quick add</p>
           <div className="single-product__buttons-container">
             {item?.attributes.sizes.split(",").map((size, i) => (
               <SizeButtonQuickAdd key={i} itemData={itemData} size={size} />

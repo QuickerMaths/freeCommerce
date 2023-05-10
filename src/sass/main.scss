@@ -1,11 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Changa+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @import "./utils/vars";
 @import "./utils/global";
-@import "./components/countdown";
 @import "./components/product-detail";
 @import "./components/header/header";
 @import "./components/home/header-home";
@@ -29,8 +26,4 @@
 @import "./components/client-panel/clent-single-order";
 @import "./components/client-panel/client-order-details";
 @import "./components/header/mobile-menu";
-@import "./components/faq/delivery-faq";
-@import "./components/faq/returns-faq";
-@import "./components/size-guide/size-guide";
 @import "./components/loading";
-@import "./components/contact/contact";

@@ -21,12 +21,8 @@ function App() {
 
   const RequireAuth = lazy(() => import("./components/RequireAuth"));
   const Shop = lazy(() => import("./pages/Shop"));
-  const About = lazy(() => import("./pages/About"));
   const Cancel = lazy(() => import("./pages/Cancel"));
   const Success = lazy(() => import("./pages/Success"));
-  const DeliveryFAQ = lazy(() => import("./pages/DeliveryFAQ"));
-  const ReturnsFAQ = lazy(() => import("./pages/ReturnsFAQ"));
-  const SizeGuide = lazy(() => import("./pages/SizeGuide"));
   const ProductDetail = lazy(() => import("./components/ProductDetail"));
   const RegisterForm = lazy(() => import("./pages/RegisterForm"));
   const ClientPanel = lazy(() => import("./pages/ClientPanel"));
@@ -38,7 +34,6 @@ function App() {
   const RegisterEmialConfirmation = lazy(
     () => import("./pages/RegisterEmialConfirmation")
   );
-  const Contact = lazy(() => import("./components/contact/Contact"));
   const ResetPassword = lazy(() => import("./pages/ResetPassword"));
 
   //Auth check
@@ -64,7 +59,6 @@ function App() {
               <Route index element={<Shop />} />
               <Route path=":productId" element={<ProductDetail />} />
             </Route>
-            <Route path="about" element={<About />} />
             <Route path="register">
               <Route index element={<RegisterForm />} />
               <Route path="success" element={<RegistrationSuccess />} />
@@ -86,12 +80,6 @@ function App() {
                   element={<ClientOrderDetails />}
                 />
               </Route>
-            </Route>
-            <Route path="faq">
-              <Route path="delivery" element={<DeliveryFAQ />} />
-              <Route path="returns" element={<ReturnsFAQ />} />
-              <Route path="size-guide" element={<SizeGuide />} />
-              <Route path="contact" element={<Contact />} />
             </Route>
             <Route path="cancel" element={<Cancel />} />
             <Route path="success" element={<Success />} />
