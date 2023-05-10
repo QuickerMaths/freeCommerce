@@ -22,9 +22,7 @@ const ShoppingCart: React.FC<Props> = ({ setOpen, isOpen }) => {
   const [stripePayment, { isLoading, isSuccess, isError }] =
     useStripePaymentMutation();
 
-  const stripePromise = loadStripe(
-    "pk_test_51N5ZgrCngNzB7I6mYJGsMlWvjLWPGnFPUQxJQUVipfcTroeOGsgnTprbjOsVo0yd0oo00U0rlOaNN22AMtKXJn2600aHDs85FD"
-  );
+  const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PB_KEY);
 
   const handlePayment = async () => {
     try {
