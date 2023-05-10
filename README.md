@@ -128,5 +128,6 @@ VITE_STRIPE_KEY = <your stripe secret key>
 ## Todo 
 
 - [ ] Add ability to login using google, facebook
+- [ ] Work on website performence score
 
 
