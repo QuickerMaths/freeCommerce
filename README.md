@@ -96,7 +96,7 @@ npm install
 #start local server
 npm run dev
 ```
-Create .env file in package.json direcoroty and type env variables
+Create .env file in package.json directory and add those env variables
 
 ```
 VITE_API_TOKEN = <type your strapi Api key>
