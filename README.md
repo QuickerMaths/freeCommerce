@@ -59,7 +59,7 @@ APP_NAME=Freecommerce
 FRONTEND_DOMAIN=localhost
 #Stripe
 STRIPE_KEY=<your stripe api key>
-STRIPE_FRONTEND=https://localhost:1337/
+STRIPE_FRONTEND=http://localhost:1337/
 #Sendgrid
 SENDGRID_API_KEY=<your sendgrid api key>
 ```
