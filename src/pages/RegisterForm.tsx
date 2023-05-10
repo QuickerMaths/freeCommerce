@@ -77,34 +77,6 @@ const RegisterForm = () => {
     }
   };
 
-  const [validName, setaValidName] = useState<boolean>(false);
-  const [userFocus, setUserFocus] = useState<boolean>(false);
-
-  const [validPwd, setaValidPwd] = useState<boolean>(false);
-  const [pwdFocus, setPwdFocus] = useState<boolean>(false);
-
-  const [matchPwd, setMatchPwd] = useState<string>("");
-  const [validMatch, setaValidMatch] = useState<boolean>(false);
-  const [matchFocus, setMatchFocus] = useState<boolean>(false);
-
-  const [errMsg, setErrMsg] = useState<string>("");
-
-  useEffect(() => {
-    userRef.current.focus();
-  }, []);
-
-  useEffect(() => {
-    setaValidName(USER_REGEX.test(userData.username));
-  }, [userData.username]);
-
-  useEffect(() => {
-    setaValidPwd(PWD_REGEX.test(userData.password));
-    setaValidMatch(userData.password === matchPwd);
-  }, [userData.password, matchPwd]);
-
-  useEffect(() => {
-    setErrMsg("");
-  }, [userData.username, userData.password, matchPwd]);
 
   return (
     <section className="register">
