@@ -16,9 +16,9 @@ This project is a summary of knowledge that I've gained in the past few months. 
 
 In the first place, like every ecommerce store, the application gives the user the ability to add products to the cart, which is constantly saving in localStorage. To do that, I've used middleware listeners from Redux/Toolkit, which allows easily overwriting localStorage items every time a certain reducer is dispatched. Same thing with product filters, which are pretty simple and based on Strapi API endpoint filtering.
 
-When it comes to the payment process, I've integrated Stripe API with redirects user to Stripe payment page. After the user finishes the payment process (also by canceling it), they are redirected to a success or cancel page where they can see a summary of their order with all the data retrieved from Stripe API (if the user is logged in to their account, the order summary is being saved on the server, which allows them to look it up later on).
+When it comes to the payment process, I've integrated Stripe API with redirects user to Stripe payment page. After the user finishes the payment process (also by canceling it), user is being redirected to a success or cancel page where the a summary of their order with all the data is shown. This summary is retrieved from Stripe API (if the user is logged in to their account, the order summary is being saved on the server with the user ID attatched, which allows them to look it up later on).
 
-Moving forward to the user account feature, the user can register their account only after email confirmation, which is being sent by Sendgrid provider. After successful registration, the user gets access to features like saving items on their wishlist (items are saved on the backend site, which allows the user to see their wishlist on different devices), viewing previously made orders, and the ability to add phone number user data, to, for example, retrieve SMS notifications. The application also allows the user to change their password using their email after they forget it.
+Moving forward to the user account feature, the user can register their account only after email confirmation, which is being sent by Sendgrid provider. After successful registration, the user gets access to features like saving items on their wishlist (items are saved on the server side, which allows the user to see their wishlist on different devices), viewing previously made orders, and the ability to add phone number to, for example, recive SMS notifications. The application also allows the user to change their password using their email after they forget it.
 
 ### [Strapi application](https://github.com/QuickerMaths/freecommerceStrapi)
 
@@ -43,8 +43,8 @@ Configure your app like this
 
 <img width="540" alt="Zrzut ekranu 2023-05-10 o 16 54 42" src="https://github.com/QuickerMaths/freeCommerce/assets/116837090/9b759432-5c31-429c-99ad-2d0bcab18212">
 
-You can also choose another database, but you have to install it first. Choosing SQLite is the easiest choice.
-After installation process is success replace all the files with those from previusly cloned repo and run
+You can also choose other database, but you have to install it first. Choosing SQLite is the easiest choice.
+After installation process is success replace all the files with those from previously cloned repo and run
 
 ```
 npm install
@@ -59,7 +59,7 @@ APP_NAME=Freecommerce
 FRONTEND_DOMAIN=localhost
 #Stripe
 STRIPE_KEY=<your stripe api key>
-STRIPE_FRONTEND=https://localhost:1337/
+STRIPE_FRONTEND=http://localhost:1337/
 #Sendgrid
 SENDGRID_API_KEY=<your sendgrid api key>
 ```
