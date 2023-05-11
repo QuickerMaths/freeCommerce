@@ -51,7 +51,7 @@ const HomeGrid = () => {
           <div
             className="home-grid__item-two"
             onClick={() => {
-              dispatch(handleSubCategoryFilter("topy"));
+              dispatch(handleSubCategoryFilter("freecommerce_classic"));
               navigate("/shop");
               window.scrollTo(0, 0);
               return;
