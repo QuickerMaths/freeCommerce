@@ -32,7 +32,7 @@ const HomeGrid = () => {
           <div
             className="home-grid__item-one"
             onClick={() => {
-              dispatch(handleSubCategoryFilter("tank_top"));
+              dispatch(handleSubCategoryFilter("hoodie"));
               navigate("/shop");
               window.scrollTo(0, 0);
               return;
@@ -46,7 +46,7 @@ const HomeGrid = () => {
               width={350}
               height={256}
             />
-            <p className="home-grid__title--one">Tank Topy</p>
+            <p className="home-grid__title--one">hoodie</p>
           </div>
           <div
             className="home-grid__item-two"
@@ -65,7 +65,7 @@ const HomeGrid = () => {
               width={157}
               height={288}
             />
-            <p className="home-grid__title--two">Topy</p>
+            <p className="home-grid__title--two">Classic</p>
           </div>
           <div
             className="home-grid__item-three"
@@ -84,7 +84,7 @@ const HomeGrid = () => {
               width={157}
               height={288}
             />
-            <p className="home-grid__title--three">Koszulki</p>
+            <p className="home-grid__title--three">Tshirt</p>
           </div>
           <div
             className="home-grid__item-four"
@@ -103,7 +103,7 @@ const HomeGrid = () => {
               height={171}
               width={157}
             />
-            <p className="home-grid__title--four">Kolekcja Damska</p>
+            <p className="home-grid__title--four">Womans</p>
           </div>
           <div
             className="home-grid__item-five"
@@ -122,7 +122,7 @@ const HomeGrid = () => {
               height={171}
               width={157}
             />
-            <p className="home-grid__title--five">Kolekcja Męska</p>
+            <p className="home-grid__title--five">Mans</p>
           </div>
         </div>
       </div>

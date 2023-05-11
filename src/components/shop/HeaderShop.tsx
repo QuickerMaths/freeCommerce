@@ -8,11 +8,18 @@ import headerShopWomanDesktop from "../../assets/images/headerShopWoman/headerSh
 import headerShopManMobile from "../../assets/images/headerShopMan/headerShopMan-mobile.webp";
 import headerShopManTablet from "../../assets/images/headerShopMan/headerShopMan-tablet.webp";
 import headerShopManDesktop from "../../assets/images/headerShopMan/headerShopMan-desktop.webp";
+
+import homeGrid6Desktop from "../../assets/images/homeGrid6/homeGrid6-desktop.webp";
+import homeGrid6Tablet from "../../assets/images/homeGrid6/homeGrid6-tablet.webp";
+import homeGrid6Mobile from "../../assets/images/homeGrid6/homeGrid6-mobile.webp";
+import homeGrid3Desktop from "../../assets/images/homeGrid3/homeGrid3-desktop.webp";
+import homeGrid3Tablet from "../../assets/images/homeGrid3/homeGrid3-tablet.webp";
+import homeGrid3Mobile from "../../assets/images/homeGrid3/homeGrid3-mobile.webp";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
 const HeaderShop = () => {
-  const matchesTablet = useMediaQuery("max-width:1024px");
-  const matchesDesktop = useMediaQuery("max-width:5000px");
+  const matchesTablet = useMediaQuery("max-width: 1024px");
+  const matchesDesktop = useMediaQuery("max-width: 5000px");
 
   const dispatch = useAppDispatch();
 
@@ -27,10 +34,10 @@ const HeaderShop = () => {
         style={{
           backgroundImage: `url('${
             matchesDesktop
-              ? headerShopWomanDesktop
+              ? homeGrid3Mobile
               : matchesTablet
-              ? headerShopWomanTablet
-              : headerShopWomanMobile
+              ? homeGrid3Tablet
+              : homeGrid3Desktop
           }')`,
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -57,10 +64,10 @@ const HeaderShop = () => {
         style={{
           backgroundImage: `url('${
             matchesDesktop
-              ? headerShopManDesktop
+              ? homeGrid6Mobile
               : matchesTablet
-              ? headerShopManTablet
-              : headerShopManMobile
+              ? homeGrid6Tablet
+              : homeGrid6Desktop
           }')`,
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
